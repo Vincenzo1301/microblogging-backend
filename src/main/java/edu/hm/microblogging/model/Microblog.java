@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.sql.Timestamp;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name = "microblogs")
@@ -18,7 +19,7 @@ public class Microblog {
   private Long id;
 
   @Column(name = "user_id", nullable = false)
-  private String userId;
+  private Long userId;
 
   @Column(name = "content", nullable = false)
   private String content;
@@ -27,9 +28,13 @@ public class Microblog {
   @CreationTimestamp
   private Timestamp createdAt;
 
+  @Column(name = "updated_at", nullable = false)
+  @UpdateTimestamp
+  private Timestamp updatedAt;
+
   public Microblog() {}
 
-  public Microblog(String userId, String content) {
+  public Microblog(Long userId, String content) {
     this.userId = userId;
     this.content = content;
   }
@@ -38,7 +43,7 @@ public class Microblog {
     return id;
   }
 
-  public String getUserId() {
+  public Long getUserId() {
     return userId;
   }
 
@@ -48,5 +53,13 @@ public class Microblog {
 
   public Timestamp getCreatedAt() {
     return createdAt;
+  }
+
+  public Timestamp getUpdatedAt() {
+    return updatedAt;
+  }
+
+  public void setContent(String content) {
+    this.content = content;
   }
 }
