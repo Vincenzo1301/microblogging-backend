@@ -1,15 +1,12 @@
 package edu.hm.microblogging.resource;
 
 import static org.springframework.http.HttpStatus.CREATED;
-import static org.springframework.http.HttpStatus.OK;
 
 import edu.hm.microblogging.service.impl.MicrobloggingServiceImpl;
 import edu.hm.microblogging.service.requests.CreateMicroblogRequest;
-import edu.hm.microblogging.service.results.ReadAllMicroblogsResult;
 import edu.hm.microblogging.service.results.ReadMicroblogResult;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
