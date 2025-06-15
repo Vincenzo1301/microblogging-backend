@@ -1,0 +1,11 @@
+### Create a new microblogging post
+POST http://localhost:8080/api/v1/microblogging
+Content-Type: application/json
+
+{
+  "userId": "7d633e0f-5427-46f7-90fb-9f666700f931",
+  "content": "This is a new microblogging post"
+}
+
+### Get all microblogging posts
+GET http://localhost:8080/api/v1/microblogging
