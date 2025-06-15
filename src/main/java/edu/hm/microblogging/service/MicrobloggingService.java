@@ -1,7 +1,8 @@
 package edu.hm.microblogging.service;
 
 import edu.hm.microblogging.service.results.CreateMicroblogResult;
-import edu.hm.microblogging.service.results.ReadAllMicroblogsResult;
+import edu.hm.microblogging.service.results.ReadMicroblogResult;
+import java.util.List;
 
 public interface MicrobloggingService {
 
@@ -19,5 +20,5 @@ public interface MicrobloggingService {
    *
    * @return a result object containing the status and list of microblogs
    */
-  ReadAllMicroblogsResult readAllMicroblogs();
+  List<ReadMicroblogResult> readAllMicroblogs();
 }
