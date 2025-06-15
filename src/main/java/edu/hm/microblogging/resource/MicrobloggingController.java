@@ -44,5 +44,5 @@ public class MicrobloggingController {
   public ResponseEntity<String> editMicroblog(@Valid @RequestBody EditMicroblogRequest request) {
     var result = microbloggingService.editMicroblog(parseLong(request.userId()), parseLong(request.microblogId()), request.content());
     return ResponseEntity.status(OK).body(result.message());
-    }
+  }
 }
